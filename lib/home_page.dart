@@ -98,30 +98,33 @@ class _HomePageState extends State<HomePage> {
           children: [
             LightSourcePreview(bgColor: _bgColor),
             SizedBox(height: 100.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'CHANGE COLOR',
-                  style: TextStyle(fontSize: 18.0, color: Colors.black54),
-                ),
-                SizedBox(width: 40.0),
-                _colorChip(
-                  const Color.fromARGB(255, 230, 230, 230),
-                  Colors.black26,
-                ),
-                _colorChip(Colors.lightGreen, Colors.black26),
-                _colorChip(Colors.brown, Colors.black26),
-                _colorChip(Colors.cyan, Colors.black26),
-                _colorChip(Colors.deepOrange, Colors.black26),
-                _colorChip(Colors.deepPurple, Colors.black26),
-                _colorChip(Colors.indigo, Colors.black26),
-                _colorChip(Colors.lime, Colors.black26),
-                _colorChip(Colors.teal, Colors.black26),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'CHANGE COLOR',
+                    style: TextStyle(fontSize: 18.0, color: Colors.black54),
+                  ),
+                  SizedBox(width: 40.0),
+                  _colorChip(
+                    const Color.fromARGB(255, 230, 230, 230),
+                    Colors.black26,
+                  ),
+                  _colorChip(Colors.lightGreen, Colors.black26),
+                  _colorChip(Colors.brown, Colors.black26),
+                  _colorChip(Colors.cyan, Colors.black26),
+                  _colorChip(Colors.deepOrange, Colors.black26),
+                  _colorChip(Colors.deepPurple, Colors.black26),
+                  _colorChip(Colors.indigo, Colors.black26),
+                  _colorChip(Colors.lime, Colors.black26),
+                  _colorChip(Colors.teal, Colors.black26),
 
-                _colorChip(Colors.blueGrey, Colors.black26),
-                _colorChip(Colors.grey, Colors.black26),
-              ],
+                  _colorChip(Colors.blueGrey, Colors.black26),
+                  _colorChip(Colors.grey, Colors.black26),
+                ],
+              ),
             ),
           ],
         );
