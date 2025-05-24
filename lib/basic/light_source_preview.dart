@@ -5,13 +5,14 @@ import 'package:neumorphlutter/creator/neu_out.dart';
 import '../creator/light_source.dart';
 
 class LightSourcePreview extends StatefulWidget {
-  const LightSourcePreview({super.key});
+  final Color bgColor;
+  const LightSourcePreview({super.key, required this.bgColor});
 
   @override
   State<LightSourcePreview> createState() => _LightSourcePreviewState();
 }
 
-Color _bgColor = const Color.fromARGB(255, 230, 230, 230);
+// Color _bgColor = const Color.fromARGB(255, 237, 199, 199);
 int _bulbIndexOn = 0;
 List<Directions> directions = [
   Directions.topLeft,
@@ -28,7 +29,7 @@ bool _isOut = true;
 class _LightSourcePreviewState extends State<LightSourcePreview> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 1000.0,
       // height: 400.0,
       // color: Colors.blueGrey,
@@ -65,7 +66,7 @@ class _LightSourcePreviewState extends State<LightSourcePreview> {
                               ? NeuOut(
                                 width: 350.0,
                                 height: 100.0,
-                                color: _bgColor,
+                                color: widget.bgColor,
                                 direction: directions[_bulbIndexOn],
                                 child: Text(
                                   'NeuOut',
@@ -79,7 +80,7 @@ class _LightSourcePreviewState extends State<LightSourcePreview> {
                               : NeuIn(
                                 width: 350.0,
                                 height: 100.0,
-                                color: _bgColor,
+                                color: widget.bgColor,
                                 direction: directions[_bulbIndexOn],
                                 child: Text(
                                   'NeuIn',
